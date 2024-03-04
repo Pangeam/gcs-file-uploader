@@ -17,7 +17,7 @@ gsutil cors set cors.txt gs://$PROJECT_NAME-urlsigner
 Next, build the Docker image and push to GCR:
 
 ```shell
-docker build -t gcr.io/$PROJECT_NAME/uploader . && docker push gcr.io/$PROJECT_NAME/uploader:latest
+docker build --platform linux/amd64 -t gcr.io/$PROJECT_NAME/uploader . && docker push gcr.io/$PROJECT_NAME/uploader:latest
 ```
 
 Lastly, submit it to Cloud Run:
