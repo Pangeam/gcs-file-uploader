@@ -1,3 +1,6 @@
+*As of 2024 03 04 these directions work, and has been deployed in Pangeam Cloud run under https://upload.pangeam.com*
+
+
 # Setup:
 
 Run the following to create a serviceAccount that will be the background, download its key, create a bucket, allow the proper access to the service account, and set an open CORS policy.
