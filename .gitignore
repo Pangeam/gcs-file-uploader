@@ -117,3 +117,6 @@ test.dat
 push.sh
 test.sh
 service_account.json
+
+#macstupid
+.DS_Store
