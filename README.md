@@ -6,6 +6,10 @@
 Run the following to create a serviceAccount that will be the background, download its key, create a bucket, allow the proper access to the service account, and set an open CORS policy.
 
 ```shell
+gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
+```
+
+```shell
 PROJECT_NAME=$(gcloud config list --format="value(core.project)")
 gcloud iam service-accounts create urlsigner --display-name="GCS URL Signer" --project=${PROJECT_NAME}
 gcloud iam service-accounts keys  create service_account.json --iam-account=urlsigner@${PROJECT_NAME}.iam.gserviceaccount.com
@@ -25,3 +29,7 @@ Lastly, submit it to Cloud Run:
 ```shell
 gcloud beta run deploy uploader --image gcr.io/$PROJECT_NAME/uploader:latest
 ```
+
+See your files here:
+
+https://console.cloud.google.com/storage/browser/pangeam-general-ops-urlsigner
