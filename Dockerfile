@@ -3,7 +3,7 @@
 FROM python:3.7-slim
 
 ENV GOOGLE_APPLICATION_CREDENTIALS "/service_account.json"
-ENV BUCKET_NAME mcowger-urlsigner
+ENV BUCKET_NAME pangeam-general-ops-urlsigner
 # Copy local code to the container image.
 
 COPY . /
